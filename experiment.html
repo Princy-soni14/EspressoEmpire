@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile-EspressoEmpire</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        /* Navbar CSS */
+        .landing-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: #efefef;
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: top 0.3s;
+        }
+
+        .landing-nav.hidden {
+            top: -100px;
+        }
+
+        .container-fluid h3 {
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 700;
+            font-size: 28px;
+            margin-right: 82px;
+            color: rgb(61, 30, 30);
+            margin-top: 5px;
+        }
+
+        .navbar-nav .nav-link {
+            color: rgb(61, 30, 30);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 19px;
+            margin-right: 15px;
+        }
+
+        /* Footer CSS */
+        footer {
+            background-color: #27170d;
+            color: #fff;
+            height: auto;
+            width: auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .column {
+            flex: 1;
+            min-width: 200px;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        .first {
+            text-align: left;
+            margin-left: 10px;
+        }
+
+        .second {
+            text-align: center;
+            margin-left: 4px;
+        }
+
+        .third {
+            text-align: right;
+        }
+
+        .column a {
+            display: block;
+            color: #fff;
+            margin-bottom: 8px;
+            text-decoration: none;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .column a:hover {
+            color: #f1f1f1;
+        }
+
+        .third p {
+            margin: 3px 0;
+            font-size: 20px;
+            color: #fff;
+        }
+
+        #head {
+            color: beige;
+            font-size: 40px;
+            margin-top: 15px;
+            font-family: "Footlight MT";
+        }
+        #shopping {
+            font-size: 30px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        /* Profile Section Styles */
+        #profile {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-pic img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+
+        .profile-details {
+            margin-left: 20px;
+        }
+
+        .profile-details p {
+            margin: 5px 0;
+        }
+
+        .profile-details input {
+            margin: 5px 0;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .profile-details button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .profile-details button:hover {
+            background-color: #45a049;
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .dropbtn:hover {
+            background-color: #45a049;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        .dropdown-content a,
+        .dropdown-content .upload-label {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover,
+        .dropdown-content .upload-label:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .edit-mode input {
+            display: inline-block;
+        }
+
+        .edit-mode span {
+            display: none;
+        }
+    </style>
+    <script>
+        // JavaScript to handle navbar visibility on scroll
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('.landing-nav');
+
+        window.addEventListener('scroll', () => {
+            let scrollTop = window.scrollY;
+
+            if (scrollTop > lastScrollTop) {
+                // Scroll down
+                navbar.classList.add('hidden');
+            } else {
+                // Scroll up
+                navbar.classList.remove('hidden');
+            }
+
+            lastScrollTop = scrollTop;
+        });
+
+            </script>
+    <link href="ESPRESSOEMPIRE.png" rel="icon">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg landing-nav">
+        <div class="container-fluid">
+            <h3>EspressoEmpire</h3>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    <a class="nav-link" href="index.html">About Us</a>
+                    <a class="nav-link" href="#products">Products</a>
+                    <a class="nav-link" href="#brewing-tips">Brewing Tips</a>
+                    <a class="nav-link" href="#contact">Contact Us</a>
+                    <a class="nav-link" href="profile.html">My Profile</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <br><br><br>
+    <section id="profile">
+        <h2>Customer Profile</h2>
+        <div class="profile-container">
+            <div class="profile-pic">
+                <img id="profile-image" src="path/to/default-profile-pic.jpg" alt="Profile Picture">
+            </div>
+            <div class="profile-details">
+                <!-- Personal Information Section -->
+                <div class="personal-info">
+                    <h3>Personal Information</h3>
+                    <p><strong>Name:</strong> <span id="profile-name-display">John Doe</span> <input type="text" id="profile-name-input" value="John Doe" style="display:none;"></p>
+                </div>
+                <!-- Contact Information Section -->
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p><strong>Email:</strong> <span id="profile-email-display">johndoe@example.com</span> <input type="email" id="profile-email-input" value="johndoe@example.com" style="display:none;"></p>
+                    <p><strong>Address:</strong> <span id="profile-address-display">123 Coffee St, EspressoCity</span> <input type="text" id="profile-address-input" value="123 Coffee St, EspressoCity" style="display:none;"></p>
+                </div>
+                <!-- Save Button and Dropdown -->
+                <div class="profile-actions">
+                    <button id="edit-button" onclick="editProfile()">Edit Profile</button>
+                    <div class="dropdown">
+                        <button class="dropbtn">More Options</button>
+                        <div class="dropdown-content">
+                            <a href="#" onclick="viewOrders()">View Orders</a>
+                            <a href="#" onclick="logout()">Logout</a>
+                            <label for="upload-image" class="upload-label">Change Profile Image</label>
+                            <input type="file" id="upload-image" style="display:none" onchange="uploadProfileImage(event)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <br><br>
+    <!-- Footer Section -->
+    <footer>
+        <!-- Footer content goes here -->
+        <div class="footer-container">
+            <div class="column first">
+                <a href="#">About Us</a><br>
+                <a href="#">Shop</a><br>
+                <a href="#">Offers</a><br>
+                <a href="#">Register Warranty</a><br>
+                <a href="#">Careers</a>
+            </div>
+            <div class="column second">
+                <a href="#">Terms of Service</a><br>
+                <a href="#">Privacy Policy</a><br>
+                <a href="#">Refund Policy</a><br>
+                <a href="#">Warranty Policy</a><br>
+                <a href="#">Shipping Policy</a><br>
+            </div>
+            <div class="column third">
+                <p id="head">☕EspressoEmpire</p>
+                <br>
+                <p id="shopping">🛒Shop with us</p>
+                <p>Mail Us: EspressoEmpire@gmail.com</p>
+                <p>Call Us: 1-800-123-5171</p>
+                <p>We're here to help.</p>
+            </div>
+        </div>
+        <div>
+            <p>Copyright&copy;2024 EspressoEmpire</p>
+        </div> 
+    </footer>
+</body>
+</html>

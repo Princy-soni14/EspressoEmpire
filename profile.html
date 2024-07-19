@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile-EspressoEmpire</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        /* Navbar CSS */
+        .landing-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000; /* Ensure it's on top of other content */
+            background-color: #efefef; /* Adjust transparency as needed */
+            padding: 15px 0; /* Padding for better appearance */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better separation */
+            transition: top 0.3s; /* Smooth transition for hiding/showing */
+        }
+
+        .landing-nav.hidden {
+            top: -100px; /* Move navbar above the viewport when hidden */
+        }
+
+        .container-fluid h3{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    font-size: 28px;
+    margin-right: 82px;
+    color: rgb(61, 30, 30);
+    margin-top: 5px;
+}  
+
+.navbar-nav .nav-link{
+    color: rgb(61, 30, 30);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 19px;
+    margin-right: 15px;
+}
+    /* Footer CSS */
+    footer {
+    background-color: #27170d; /* Dark background color for the footer */
+    color: #fff; /* White text color */
+    height: auto;
+    width: auto;
+    padding: 20px; /* Padding around the footer */
+    text-align: center; /* Center text alignment */
+}
+
+.footer-container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between the columns */
+    flex-wrap: wrap; /* Allow columns to wrap if needed */
+    max-width: 1200px; /* Max width for the footer container */
+    margin: 0 auto; /* Center the footer container */
+}
+
+.column {
+    flex: 1; /* Flex-grow to distribute space equally */
+    min-width: 200px; /* Minimum width for each column */
+    padding: 5px; /* Padding within each column */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+.first {
+    text-align: left; /* Align text to the left */
+    margin-left: 10px;
+}
+
+.second {
+    text-align: center; /* Align text to the center */
+    margin-left: 4px;
+}
+
+.third {
+    text-align: right;/* Align text to the right */
+}
+
+.column a {
+    display: block; /* Make links block-level elements */
+    color: #fff; /* Text color for links */
+    margin-bottom: 8px; /* Space between links */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 18px; /* Font size for links */
+    margin-top: 10px;
+}
+
+.column a:hover {
+    color: #f1f1f1; /* Change link color on hover */
+}
+
+.third p {
+    margin: 3px 0; /* Margin for paragraphs */
+    font-size: 20px; /* Font size for paragraphs */
+    color:#fff;
+
+}
+
+#head {
+    color: beige;
+    font-size: 40px; 
+    margin-top: 15px;
+    font-family: "Footlight MT"; /* Font family for the heading */
+}
+#shopping {
+    font-size: 30px; 
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Font family for the heading */
+}
+/*CSS */
+/* Profile Section Styles */
+#profile {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+}
+
+.profile-pic img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.profile-details {
+    margin-left: 20px;
+}
+
+.profile-details p {
+    margin: 5px 0;
+}
+
+.profile-details button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.profile-details button:hover {
+    background-color: #45a049;
+}
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dropbtn:hover {
+    background-color: #45a049;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown-content a,
+.dropdown-content .upload-label {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover,
+.dropdown-content .upload-label:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+    </style>
+    <script>
+        // JavaScript to handle navbar visibility on scroll
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('.landing-nav');
+
+        window.addEventListener('scroll', () => {
+            let scrollTop = window.scrollY;
+
+            if (scrollTop > lastScrollTop) {
+                // Scroll down
+                navbar.classList.add('hidden');
+            } else {
+                // Scroll up
+                navbar.classList.remove('hidden');
+            }
+
+            lastScrollTop = scrollTop;
+        });
+    </script>
+    <link href="ESPRESSOEMPIRE.png" rel="icon">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg landing-nav">
+        <div class="container-fluid">
+            <h3>EspressoEmpire</h3>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    <a class="nav-link" href="index.html">About Us</a>
+                    <a class="nav-link" href="#products">Products</a>
+                    <a class="nav-link" href="#brewing-tips">Brewing Tips</a>
+                    <a class="nav-link" href="#contact">Contact Us</a>
+                    <a class="nav-link" href="profile.html">My Profile</a>
+                    
+                </div>
+            </div>
+        </div>
+    </nav>
+    <br><br><br>
+ <!-- Profile Section -->
+<section id="profile">
+    <h2>Customer Profile</h2>
+    <div class="profile-container">
+        <div class="profile-pic">
+            <img id="profile-image" src="path/to/default-profile-pic.jpg" alt="Profile Picture">
+        </div>
+        <div class="profile-details">
+            <p><strong>Name:</strong> <span id="profile-name">John Doe</span></p>
+            <p><strong>Email:</strong> <span id="profile-email">johndoe@example.com</span></p>
+            <p><strong>Address:</strong> <span id="profile-address">123 Coffee St, EspressoCity</span></p>
+            <button onclick="editProfile()">Edit Profile</button>
+            <div class="dropdown">
+                <button class="dropbtn">More Options</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="viewOrders()">View Orders</a>
+                    <a href="#" onclick="logout()">Logout</a>
+                    <label for="upload-image" class="upload-label">Change Profile Image</label>
+                    <input type="file" id="upload-image" style="display:none" onchange="uploadProfileImage(event)">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <br><br>
+    <!-- Footer Section -->
+    <footer>
+        <!-- Footer content goes here -->
+        <div class="footer-container">
+            <div class="column first">
+                <a href="#">About Us</a><br>
+                <a href="#">Shop</a><br>
+                <a href="#">Offers</a><br>
+                <a href="#">Register Warranty</a><br>
+                <a href="#">Careers</a>
+            </div>
+            <div class="column second">
+                <a href="#">Terms of Service</a><br>
+                <a href="#">Privacy Policy</a><br>
+                <a href="#">Refund Policy</a><br>
+                <a href="#">Warranty Policy</a><br>
+                <a href="#">Shipping Policy</a><br>
+            </div>
+            <div class="column third">
+                <p id="head">☕EspressoEmpire</p>
+                <br>
+                <p id="shopping">🛒Shop with us</p>
+                <p>Mail Us: EspressoEmpire@gmail.com</p>
+                <p>Call Us: 1-800-123-5171</p>
+                <p>We're here to help.</p>
+            </div>
+        </div>
+        <div>
+            <p>Copyright&copy;2024 EspressoEmpire</p>
+            </div> 
+    </footer>
+
+</body>
+</html>

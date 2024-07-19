@@ -1,0 +1,81 @@
+/* Body css stlye */
+body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-image: url(login-bg.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+/* Login container css style */
+.login-container {
+    background: rgba(255, 255, 255,0.7);
+    padding: 10px;
+    width:400px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.0);
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.4em;
+    font-family:"Footlight MT";
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 1.9em;
+    font-family:"Footlight MT";
+    margin-bottom: 1.5em;
+}
+
+.form-group {
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5em;
+    margin-left: 16px;
+    text-align: left;
+    color: rgb(19, 19, 19);
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 80%;
+    padding: 0.8em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 80%;
+    padding: 0.8em;
+    background: #333;
+    color: #fff;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #555;
+}
+/* Sign up link css style */
+.signup-link {
+    margin-top: 1em;
+}
+
+.signup-link a {
+    color: #333;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}

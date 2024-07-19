@@ -1,0 +1,435 @@
+
+/* Navbar css styles */
+.container-fluid h3{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    font-size: 28px;
+    margin-right: 82px;
+    color: rgb(61, 30, 30);
+    margin-top: 5px;
+}  
+
+.navbar-nav .nav-link{
+    color: rgb(61, 30, 30);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 19px;
+    margin-right: 15px;
+}
+
+/* Home section css styles */
+.section-background {
+    height: 580px;
+    width:auto;
+    background-image: url('Eswp'); /* Replace with your image path */
+    background-size: cover;
+    text-align: center;
+    color: #fff; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-content h1 {
+    color: #fff; 
+    font-family:  Georgia, 'Times New Roman', Times, serif, monospace;
+    font-size:75px; 
+    font-weight: 700;
+    margin-top: 12px;
+    margin-bottom: 40px; 
+} 
+
+.home-content p {
+    color: #fff; 
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 35px; 
+}
+.shop{
+    color: #fff;
+    text-decoration: underline;
+    padding: 10px 20px;
+    border-radius: 5px;
+   display: inline-block;
+   font-size: 22px;
+   font-weight: bold;
+
+}
+
+/* About section css styles */
+#about {
+    height: auto;
+    width: auto;
+    background-size: cover;
+    background-color: #f9e4bc;
+    color: #563d2d;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+.about-section {
+    display: flex;
+    gap: 20px;
+}
+.about-content {
+    flex: 1;
+    margin-top: 60px;
+    text-align: left;
+}
+.about-content h2 {
+    font-family: 'Footlight MT';
+    font-size: 40px;
+    padding-left: 10px;
+    text-align: center;
+}
+.about-content p {
+    margin-top: 50px;
+    text-align: left;
+    font-family: 'Lucida Sans Unicode';
+    font-size: 20px;
+    padding-right: 22px;
+    padding-left: 22px;
+}
+.about-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about-img img {
+    height: 400px;
+    margin-top: 80px;
+    padding-right: 5px;
+    border-radius: 5px;
+}
+.about-row-2 {
+    display: flex;
+    gap: 20px;
+    
+}
+.about-item {
+    flex: 1;
+    padding: 20px;
+    border: 3px solid #fff;
+    border-radius: 5px;
+}
+
+.about-item h2{
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Product section css styles */
+#products {
+    height: auto;
+    width:auto;
+    background-size: cover;
+    background-color: #f9e4bc;
+    color: #563d2d;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#products h2 {
+    font-family: 'Footlight MT';
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+.product-container {
+    display: grid;
+    width: 100%;
+    
+    border: 1px solid #fff;
+    max-width: 1200px;
+    gap: 10px;
+}
+.product-container:nth-of-type(1) {
+    grid-template-columns: repeat(4, 1fr);
+}
+.product-container:nth-of-type(2) {
+    grid-template-columns: repeat(4, 1fr);
+}
+.product-container:nth-of-type(3) {
+    grid-template-columns: repeat(4, 1fr);
+}
+.product-container:nth-of-type(4) {
+    grid-template-columns: repeat(2, 1fr);
+}
+#products h4{
+   text-align: center;
+   font-family:'Times New Roman', Times, serif; 
+   font-style: italic;
+   text-decoration: underline;
+   font-size: 700;
+   color:#402e1e;
+}
+
+.product {
+    padding: 20px;
+    text-align: center;
+}
+.product img {
+    max-width: 100%;
+    height: 300px;
+    border-radius: 10px;
+}
+.product p {
+    font-weight: 700;
+    font-size: 35px;
+    margin-top: 20px;
+}
+input.btn {
+    background-color: #4d0f0f;
+    color: #fff; /* Black text color */
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none; /* Remove default border */
+    cursor: pointer; /* Show pointer cursor on hover */
+}
+input.btn:hover {
+    background-color: #330a0a;
+    color: #fff; /* White text color on hover */
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none; /* Remove default border */
+    cursor: pointer; /* Show pointer cursor on hover */
+}
+
+input[type="button"] {
+    width: 150px;
+    height: 50px;
+    font-size:15px;
+}
+
+/* Brewing tips section css styles */
+#brewing-tips {
+    background-color: #f9e4bc;
+    color: #563d2d;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#brewing-tips h2 {
+    font-family: 'Footlight MT';
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+.tips-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    animation: scaleIn 0.5s ease-out forwards;
+    opacity: 0; /* Initially hidden */
+}
+
+@keyframes scaleIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Tips content styling */
+.tips-content {
+    margin-bottom: 30px;
+    opacity: 0; 
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h3 {
+    color: #6d4c41;
+    font-size: 1.8rem;
+    font-family: "Calisto MT";
+    margin-bottom: 10px;
+}
+
+p {
+    color: #666;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.tips-content {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+
+
+.tips-content:hover {
+    transform: translateY(-3px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+
+@media (max-width: 768px) {
+    #brewing-tips {
+        padding: 30px 10px;
+    }
+    .tips-container {
+        padding: 15px;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    h3 {
+        font-size: 1.6rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+}
+
+/* Contact section css styles */
+#contact {
+    background-color: #f9e4bc;
+    padding: 40px 20px;
+    border-top: 2px solid #563d2d;
+}
+#contact h2 {
+    font-family: 'Footlight MT';
+    font-size: 40px;
+    text-align: center;
+    color: #563d2d;
+}
+#contact p {
+    text-align: center;
+    font-family: 'Lucida Sans Unicode';
+    font-size: 20px;
+}
+.contact {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+}
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+input, textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+button {
+    background-color: #563d2d;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    text-align: center;  
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #402e1e;
+}
+
+/* Footer section css styles */
+footer {
+    background-color: #27170d;
+    color: #fff; 
+    height: auto;
+    width: auto;
+    padding: 20px; 
+    text-align: center; 
+}
+
+.footer-container {
+    display: flex; 
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+
+.column {
+    flex: 1; 
+    min-width: 200px; 
+    padding: 5px; 
+    box-sizing: border-box;
+}
+
+.first {
+    text-align: left; 
+    margin-left: 10px;
+}
+
+.second {
+    text-align: center; 
+    margin-left: 4px;
+}
+
+.third {
+    text-align: right;
+}
+
+.column a {
+    display: block;
+    color: #fff; 
+    margin-bottom: 8px;
+    text-decoration: none; 
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.column a:hover {
+    color: #f1f1f1;
+}
+
+.third p {
+    margin: 3px 0;
+    font-size: 20px;
+    color:#fff;
+
+}
+
+#head {
+    color: beige;
+    font-size: 40px; 
+    margin-top: 15px;
+    font-family: "Footlight MT"; 
+}
+#shopping {
+    font-size: 30px; 
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+}
+
